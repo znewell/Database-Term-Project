@@ -97,6 +97,22 @@ public class DBentry {
 		}
 	}
 	
+	public boolean checkLogin(String [] login)
+	{
+		try
+		{
+			instance.DBentry("USE winona_athletics SELECT f_name FROM coach WHERE f_name = '"+login[0]+"' and '"+login[1]+"';");
+			return true;
+		}
+		
+		catch(Exception e)
+		{
+			e.getStackTrace();
+			return false;
+		}
+	}
+	
+	
 	public static void main(String[] args) {	
 		//instance.entry("Golf");
 	}
